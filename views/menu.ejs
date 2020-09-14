@@ -1,0 +1,84 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: lujj
+ * @Date: 2020-08-04 21:10:42
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2020-08-09 21:29:55
+-->
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+    <% var menus = [ {
+      title: '系统首页',
+      icon: 'fa-home',
+      path: '/',
+      role: 1
+    },
+    {
+      title:'轮播图管理',
+      icon: 'fa-map-o',
+      path: '/banner',
+      role: 1
+  },
+    {
+      title: '商品管理',
+      icon: 'fa-map-o',
+      path: '/pro',
+      role: 1
+    },
+    {
+      title: '用户管理',
+      icon: 'fa-user',
+      path: '/user',
+      role: 1
+    },
+    {
+      title: '购物车管理',
+      icon: 'fa-institution',
+      path: '/cart',
+      role: 2
+    },
+    {
+      title: '订单管理',
+      icon: 'fa-key',
+      path: '/order',
+      role: 2
+    },
+    {
+      title: '消息管理',
+      icon: 'fa-gears',
+      path: '/message',
+      role: 2
+      }
+    ]%>
+
+    <!-- Sidebar Menu -->
+    <ul class="sidebar-menu" data-widget="tree">
+      <li class="header">HEADER</li>
+      <% for (var i = 0; i < menus.length; i++) { %>
+        <% if (role >= menus[i].role) { %>
+          <li class="<%= activeindex === i ? 'active' : '' %>"><a href="<%= menus[i].path %>"><i class="fa <%= menus[i].icon %>"></i> <span><%= menus[i].title %></span></a></li>
+        <% } %>
+      <% } %>
+      <!-- Optionally, you can add icons to the links -->
+      <!-- <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
+        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#">Link in level 2</a></li>
+            <li><a href="#">Link in level 2</a></li>
+          </ul>
+        </li> -->
+    </ul>
+    <!-- /.sidebar-menu -->
+  </section>
+  <!-- /.sidebar -->
+</aside>
